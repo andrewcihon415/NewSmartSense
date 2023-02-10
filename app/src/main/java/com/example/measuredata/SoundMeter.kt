@@ -1,65 +1,34 @@
 package com.example.measuredata
 
-import android.Manifest
-import android.app.Activity
-import android.content.Context
-import android.content.pm.PackageManager
-import android.media.AudioFormat
+import android.annotation.SuppressLint
 import android.media.AudioRecord
 import android.media.MediaRecorder
-import android.util.Log
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import java.io.IOException
-import java.lang.Math.abs
-import java.lang.Math.max
 import kotlin.math.log10
-import kotlin.math.sqrt
+//class to get the max amplitude of the microphone and convert it to decibels then pass to the main activity
 
-class SoundMeter(private val context: Context) {
-    private val mediaRecorder = MediaRecorder()
-    private var recording = false
-    private var maxDb = 0f
-
-    init {
-        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
-        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
-        mediaRecorder.setOutputFile("/dev/fun")
+class SoundMeter(private val sampleRate: Int, private val channelConfig: Int, private val audioFormat: Int) {
+    private val bufferSize = AudioRecord.getMinBufferSize(sampleRate, channelConfig, audioFormat)
+    @SuppressLint("MissingPermission")
+    private val audioRecord = AudioRecord(MediaRecorder.AudioSource.MIC, sampleRate, channelConfig, audioFormat, bufferSize)
+    //permission check is present, just not here...intone it for now
+    fun startRecording() { //needs to have permission check before call, which is done in MainActivity
+        audioRecord.startRecording()
     }
 
-    fun startRecording() {
-        try {
-            mediaRecorder.prepare()
-            mediaRecorder.start()
-            recording = true
-        } catch (e: IllegalStateException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
+    fun stopRecording() { //needs to be called after 10 second collecting period to get most recent max value
+        audioRecord.stop()
     }
 
-    fun stopRecording() {
-        if (recording) {
-            mediaRecorder.stop()
-            mediaRecorder.release()
-            recording = false
+    fun getDecibelValue(): Float { //returns the max amplitude in decibels
+        val buffer = ShortArray(bufferSize)
+        audioRecord.read(buffer, 0, bufferSize)
+        var maxAmplitude = 0 //max amplitude in the buffer
+        for (i in buffer.indices) { //finds the max amplitude in the buffer by iterating through the buffer
+            maxAmplitude = maxAmplitude.coerceAtLeast(kotlin.math.abs(buffer[i].toInt()))
         }
-    }
-
-    fun getDecibelValue(): Float {
-        if (recording) {
-            val amplitude = mediaRecorder.maxAmplitude.toDouble()
-            val db = 20 * log10(amplitude)
-            Log.d(TAG, "dB1 update: $db")
-            maxDb = maxDb.coerceAtLeast(db.toFloat())
-            Log.d(TAG, "dB2 update: $maxDb")
-            return maxDb.toFloat()
-        } else {
-            return 0f
-        }
+        return 20 * log10(maxAmplitude.toDouble()).toFloat() //math to be changed for calibration(to nearest whole number)
     }
 }
+
 
 

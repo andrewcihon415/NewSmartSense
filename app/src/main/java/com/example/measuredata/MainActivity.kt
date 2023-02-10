@@ -16,11 +16,15 @@
 
 package com.example.measuredata
 
+import android.content.Context
 import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
+import android.media.AudioFormat
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.os.Message
 import android.util.Log
 import android.view.WindowManager
 import androidx.activity.result.ActivityResultLauncher
@@ -34,7 +38,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.measuredata.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
+
 
 /**
  * Activity displaying the app UI. Notably, this binds data from [MainViewModel] to views on screen,
@@ -49,19 +53,40 @@ class MainActivity : AppCompatActivity() {
     private lateinit var handlerThread: HandlerThread
     private lateinit var handler: Handler
     private lateinit var soundMeter: SoundMeter
-    public var soundLevel: Float = 12.33f
+    var soundLevel: Float = 0f //default value that will be returned for first 10 seconds
     private val viewModel: MainViewModel by viewModels()
-    var maxDbValue = 0f
-
+    var lat = 0f//default value that will be returned until location is found
+    var lng = 0f
     @OptIn(ExperimentalCoroutinesApi::class)
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //done on every app start
+        createUserName()
+        getUserID()
         super.onCreate(savedInstanceState)
+        //location collection
+        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val locationListener = object : LocationListener {
+            override fun onLocationChanged(location: Location) {
+                lat = location.latitude.toFloat()
+                lng = location.longitude.toFloat()
+
+            }
+            @Deprecated("Deprecated in Java") //should not cause to many issues for now
+            override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+            override fun onProviderEnabled(provider: String) {}
+            override fun onProviderDisabled(provider: String) {}
+        }
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        } else {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0f, locationListener)
+        }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        soundMeter = SoundMeter(this)
+        soundMeter = SoundMeter(8000, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT)//recording settings
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.RECORD_AUDIO), 1)
         } else {
-            soundMeter.startRecording()
+            soundMeter.startRecording()//permission check done here
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -107,7 +132,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
+    override fun onStart() { //ask for permissions on first start
         super.onStart()
         permissionLauncher.launch(android.Manifest.permission.BODY_SENSORS)
         permissionLauncher.launch(android.Manifest.permission.RECORD_AUDIO)
@@ -138,6 +163,7 @@ class MainActivity : AppCompatActivity() {
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             soundMeter.startRecording()
         }
+
     }
     override fun onResume() {
         super.onResume()
@@ -156,16 +182,21 @@ class MainActivity : AppCompatActivity() {
     private fun startTimer() {
         val runit = object : Runnable {
             override fun run() {
-                soundLevel = soundMeter.getDecibelValue()
+                soundMeter.startRecording()
+                Thread.sleep(10000)//wait time for soundMeter to get value
+                soundLevel = soundMeter.getDecibelValue()//get soundMeter value
                 Log.d(TAG, "dB2 update: $soundLevel")
-                handler.postDelayed(this, 10000)
+                soundMeter.stopRecording()//stop soundMeter
+                handler.postDelayed(this, 10000)//repeat every 10 seconds
             }
         }
         handler.postDelayed(runit, 10000)
         val runnable = object : Runnable {
             override fun run() {
-                sendData(soundLevel)
-                handler.postDelayed(this, 1000)
+                sendData(soundLevel, lat , lng)//send data to server
+                runOnUiThread {
+                changeScreenColor(currentHeartRate, soundLevel, this@MainActivity)}
+                handler.postDelayed(this, 1000)//repeat every 1 second
             }
         }
         handler.postDelayed(runnable, 1000)
