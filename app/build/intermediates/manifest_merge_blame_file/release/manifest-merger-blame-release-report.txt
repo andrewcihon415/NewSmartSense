@@ -1,0 +1,365 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  ~ Copyright 2021 The Android Open Source Project
+4  ~
+5  ~ Licensed under the Apache License, Version 2.0 (the "License");
+6  ~ you may not use this file except in compliance with the License.
+7  ~ You may obtain a copy of the License at
+8  ~
+9  ~     https://www.apache.org/licenses/LICENSE-2.0
+10  ~
+11  ~ Unless required by applicable law or agreed to in writing, software
+12  ~ distributed under the License is distributed on an "AS IS" BASIS,
+13  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14  ~ See the License for the specific language governing permissions and
+15  ~ limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.smartsense.measuredata"
+19    android:versionCode="3"
+20    android:versionName="0.1.1" >
+21
+22    <uses-sdk
+23        android:minSdkVersion="30"
+23-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml
+24        android:targetSdkVersion="30" />
+24-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml
+25
+26    <uses-feature android:name="android.hardware.type.watch" />
+26-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:21:5-64
+26-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:21:19-61
+27
+28    <!-- For receiving heart rate data. -->
+29    <uses-permission android:name="android.permission.BODY_SENSORS" />
+29-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:24:5-71
+29-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:24:22-68
+30    <uses-permission android:name="android.permission.INTERNET" />
+30-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:25:5-66
+30-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:25:22-64
+31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+31-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:26:5-78
+31-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:26:22-76
+32    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+32-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:27:5-76
+32-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:27:22-73
+33    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+33-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:28:5-71
+33-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:28:22-68
+34    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+34-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:29:5-79
+34-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:29:22-76
+35    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+35-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:30:5-81
+35-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:30:22-78
+36    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+36-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:31:5-81
+36-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:31:22-78
+37
+38    <!--
+39         When an app targets Android 11 (API level 30) or higher and queries for information about
+40         the other apps that are installed on a device, the system filters this information by
+41         default. Adding the query field allows Health Services to recognize the app.
+42         See https://developer.android.com/training/package-visibility.
+43    -->
+44    <queries>
+44-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:38:5-40:15
+45        <package android:name="com.google.android.wearable.healthservices" />
+45-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:39:9-78
+45-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:39:18-75
+46    </queries>
+47
+48    <uses-permission android:name="android.permission.WAKE_LOCK" />
+48-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:25:5-68
+48-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:25:22-65
+49    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+49-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:27:5-81
+49-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:27:22-78
+50    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+50-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:28:5-77
+50-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:28:22-74
+51
+52    <permission
+52-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:22:5-24:47
+53        android:name="com.smartsense.measuredata.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+53-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:23:9-81
+54        android:protectionLevel="signature" />
+54-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:24:9-44
+55
+56    <uses-permission android:name="com.smartsense.measuredata.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+56-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:26:5-97
+56-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:26:22-94
+57
+58    <application
+58-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:42:5-67:19
+59        android:name="com.smartsense.measuredata.MainApplication"
+59-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:43:9-40
+60        android:allowBackup="true"
+60-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:44:9-35
+61        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+61-->[androidx.core:core:1.12.0-alpha01] C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\AndroidManifest.xml:28:18-86
+62        android:extractNativeLibs="false"
+63        android:icon="@mipmap/ic_launcher"
+63-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:45:9-43
+64        android:label="@string/app_name"
+64-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:46:9-41
+65        android:roundIcon="@mipmap/ic_launcher_round"
+65-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:47:9-54
+66        android:supportsRtl="true"
+66-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:48:9-35
+67        android:testOnly="true"
+68        android:theme="@style/AppTheme" >
+68-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:49:9-40
+69        <uses-library
+69-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:50:9-52:39
+70            android:name="com.google.android.wearable"
+70-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:51:13-55
+71            android:required="true" />
+71-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:52:13-36
+72
+73        <meta-data
+73-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:54:9-56:36
+74            android:name="com.google.android.wearable.standalone"
+74-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:55:13-66
+75            android:value="true" />
+75-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:56:13-33
+76
+77        <activity
+77-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:58:9-66:20
+78            android:name="com.smartsense.measuredata.MainActivity"
+78-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:59:13-41
+79            android:exported="true"
+79-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:60:13-36
+80            android:label="@string/app_name" >
+80-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:61:13-45
+81            <intent-filter>
+81-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:62:13-65:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:63:17-69
+82-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:63:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:64:17-77
+84-->C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\AndroidManifest.xml:64:27-74
+85            </intent-filter>
+86        </activity>
+87
+88        <service
+88-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:24:9-31:19
+89            android:name="androidx.health.services.client.VersionApiService"
+89-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:25:13-77
+90            android:exported="true"
+90-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:26:13-36
+91            android:permission="com.google.android.wearable.healthservices.permission.PASSIVE_DATA_BINDING" >
+91-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:27:13-108
+92            <intent-filter>
+92-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:28:13-30:29
+93                <action android:name="hs.versionclient.BIND" />
+93-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:29:17-64
+93-->[androidx.health:health-services-client:1.0.0-beta01] C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\AndroidManifest.xml:29:25-61
+94            </intent-filter>
+95        </service>
+96
+97        <provider
+97-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:31:9-37:35
+98            android:name="androidx.work.impl.WorkManagerInitializer"
+98-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:32:13-69
+99            android:authorities="com.smartsense.measuredata.workmanager-init"
+99-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:33:13-68
+100            android:directBootAware="false"
+100-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:34:13-44
+101            android:exported="false"
+101-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:35:13-37
+102            android:multiprocess="true" />
+102-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:36:13-40
+103
+104        <service
+104-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:39:9-44:35
+105            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+105-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:40:13-88
+106            android:directBootAware="false"
+106-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:41:13-44
+107            android:enabled="@bool/enable_system_alarm_service_default"
+107-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:42:13-72
+108            android:exported="false" />
+108-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:43:13-37
+109        <service
+109-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:45:9-51:35
+110            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+110-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:46:13-84
+111            android:directBootAware="false"
+111-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:47:13-44
+112            android:enabled="@bool/enable_system_job_service_default"
+112-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:48:13-70
+113            android:exported="true"
+113-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:49:13-36
+114            android:permission="android.permission.BIND_JOB_SERVICE" />
+114-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:50:13-69
+115        <service
+115-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:52:9-57:35
+116            android:name="androidx.work.impl.foreground.SystemForegroundService"
+116-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:53:13-81
+117            android:directBootAware="false"
+117-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:54:13-44
+118            android:enabled="@bool/enable_system_foreground_service_default"
+118-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:55:13-77
+119            android:exported="false" />
+119-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:56:13-37
+120
+121        <receiver
+121-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:59:9-64:35
+122            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+122-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:60:13-88
+123            android:directBootAware="false"
+123-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:61:13-44
+124            android:enabled="true"
+124-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:62:13-35
+125            android:exported="false" />
+125-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:63:13-37
+126        <receiver
+126-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:65:9-75:20
+127            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+127-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:66:13-106
+128            android:directBootAware="false"
+128-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:67:13-44
+129            android:enabled="false"
+129-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:68:13-36
+130            android:exported="false" >
+130-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:69:13-37
+131            <intent-filter>
+131-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:71:13-74:29
+132                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+132-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:72:17-87
+132-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:72:25-84
+133                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+133-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:73:17-90
+133-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:73:25-87
+134            </intent-filter>
+135        </receiver>
+136        <receiver
+136-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:76:9-86:20
+137            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+137-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:77:13-104
+138            android:directBootAware="false"
+138-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:78:13-44
+139            android:enabled="false"
+139-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:79:13-36
+140            android:exported="false" >
+140-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:80:13-37
+141            <intent-filter>
+141-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:82:13-85:29
+142                <action android:name="android.intent.action.BATTERY_OKAY" />
+142-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:83:17-77
+142-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:83:25-74
+143                <action android:name="android.intent.action.BATTERY_LOW" />
+143-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:84:17-76
+143-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:84:25-73
+144            </intent-filter>
+145        </receiver>
+146        <receiver
+146-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:87:9-97:20
+147            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+147-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:88:13-104
+148            android:directBootAware="false"
+148-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:89:13-44
+149            android:enabled="false"
+149-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:90:13-36
+150            android:exported="false" >
+150-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:91:13-37
+151            <intent-filter>
+151-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:93:13-96:29
+152                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+152-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:94:17-83
+152-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:94:25-80
+153                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+153-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:95:17-82
+153-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:95:25-79
+154            </intent-filter>
+155        </receiver>
+156        <receiver
+156-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:98:9-107:20
+157            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+157-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:99:13-103
+158            android:directBootAware="false"
+158-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:100:13-44
+159            android:enabled="false"
+159-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:101:13-36
+160            android:exported="false" >
+160-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:102:13-37
+161            <intent-filter>
+161-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:104:13-106:29
+162                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+162-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:105:17-79
+162-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:105:25-76
+163            </intent-filter>
+164        </receiver>
+165        <receiver
+165-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:108:9-119:20
+166            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+166-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:109:13-88
+167            android:directBootAware="false"
+167-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:110:13-44
+168            android:enabled="false"
+168-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:111:13-36
+169            android:exported="false" >
+169-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:112:13-37
+170            <intent-filter>
+170-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:114:13-118:29
+171                <action android:name="android.intent.action.BOOT_COMPLETED" />
+171-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:115:17-79
+171-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:115:25-76
+172                <action android:name="android.intent.action.TIME_SET" />
+172-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:116:17-73
+172-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:116:25-70
+173                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+173-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:117:17-81
+173-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:117:25-78
+174            </intent-filter>
+175        </receiver>
+176        <receiver
+176-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:120:9-129:20
+177            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+177-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:121:13-99
+178            android:directBootAware="false"
+178-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:122:13-44
+179            android:enabled="@bool/enable_system_alarm_service_default"
+179-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:123:13-72
+180            android:exported="false" >
+180-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:124:13-37
+181            <intent-filter>
+181-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:126:13-128:29
+182                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+182-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:127:17-98
+182-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:127:25-95
+183            </intent-filter>
+184        </receiver>
+185        <receiver
+185-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:130:9-140:20
+186            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+186-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:131:13-78
+187            android:directBootAware="false"
+187-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:132:13-44
+188            android:enabled="true"
+188-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:133:13-35
+189            android:exported="true"
+189-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:134:13-36
+190            android:permission="android.permission.DUMP" >
+190-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:135:13-57
+191            <intent-filter>
+191-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:137:13-139:29
+192                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+192-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:138:17-88
+192-->[androidx.work:work-runtime:2.5.0] C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\AndroidManifest.xml:138:25-85
+193            </intent-filter>
+194        </receiver>
+195
+196        <service
+196-->[androidx.room:room-runtime:2.2.5] C:\Users\andre\.gradle\caches\transforms-3\0409790e8bd2a0c003dc73b1d86e1d86\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+197            android:name="androidx.room.MultiInstanceInvalidationService"
+197-->[androidx.room:room-runtime:2.2.5] C:\Users\andre\.gradle\caches\transforms-3\0409790e8bd2a0c003dc73b1d86e1d86\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+198            android:directBootAware="true"
+198-->[androidx.room:room-runtime:2.2.5] C:\Users\andre\.gradle\caches\transforms-3\0409790e8bd2a0c003dc73b1d86e1d86\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+199            android:exported="false" />
+199-->[androidx.room:room-runtime:2.2.5] C:\Users\andre\.gradle\caches\transforms-3\0409790e8bd2a0c003dc73b1d86e1d86\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+200    </application>
+201
+202</manifest>

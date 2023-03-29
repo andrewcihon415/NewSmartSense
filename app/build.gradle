@@ -23,14 +23,14 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdkPreview "UpsideDownCake"
 
     defaultConfig {
-        applicationId "com.example.measuredata"
+        applicationId "com.smartsense.measuredata"
         minSdk 30
         targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "0.1.1"
     }
     buildTypes {
         release {
@@ -51,7 +51,7 @@ android {
         freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
         freeCompilerArgs += "-Xjvm-default=all"
     }
-    namespace 'com.example.measuredata'
+    namespace 'com.smartsense.measuredata'
 }
 
 dependencies {

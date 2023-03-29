@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.smartsense.measuredata.app-mergeReleaseResources-34:/values-round-v23/values-round-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\andre\\.gradle\\caches\\transforms-3\\dcd31c5e760b938e7ea3bc56bea42b9c\\transformed\\wear-1.2.0\\res\\values-round-v23\\values-round-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,118,204",
+                        "endColumns": "62,85,79",
+                        "endOffsets": "113,199,279"
+                    }
+                }
+            ]
+        }
+    ]
+}

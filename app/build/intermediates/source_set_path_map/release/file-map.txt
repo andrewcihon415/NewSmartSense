@@ -1,0 +1,39 @@
+com.smartsense.measuredata.app-fragment-1.5.3-0 C:\Users\andre\.gradle\caches\transforms-3\0431c2acf2d7e285081f3cf1078e59e8\transformed\fragment-1.5.3\res
+com.smartsense.measuredata.app-jetified-appcompat-resources-1.2.0-1 C:\Users\andre\.gradle\caches\transforms-3\27b56027d31bddf902b85b54f1d7c118\transformed\jetified-appcompat-resources-1.2.0\res
+com.smartsense.measuredata.app-jetified-lifecycle-service-2.5.1-2 C:\Users\andre\.gradle\caches\transforms-3\295a80024bcffa25acf9de6ba3d41066\transformed\jetified-lifecycle-service-2.5.1\res
+com.smartsense.measuredata.app-jetified-lifecycle-viewmodel-ktx-2.5.1-3 C:\Users\andre\.gradle\caches\transforms-3\3e5748fff18481e8037303bd3c637258\transformed\jetified-lifecycle-viewmodel-ktx-2.5.1\res
+com.smartsense.measuredata.app-jetified-activity-ktx-1.5.1-4 C:\Users\andre\.gradle\caches\transforms-3\4fad32f94c2a2e47183ce22f2bf6f418\transformed\jetified-activity-ktx-1.5.1\res
+com.smartsense.measuredata.app-work-runtime-2.5.0-5 C:\Users\andre\.gradle\caches\transforms-3\507b808923b06890d3db38fe96af7c69\transformed\work-runtime-2.5.0\res
+com.smartsense.measuredata.app-drawerlayout-1.1.1-6 C:\Users\andre\.gradle\caches\transforms-3\5188f983bc63723b1d979773bed86bc6\transformed\drawerlayout-1.1.1\res
+com.smartsense.measuredata.app-jetified-core-ktx-1.12.0-alpha01-7 C:\Users\andre\.gradle\caches\transforms-3\58656e5cc20b9de223162a2484582a71\transformed\jetified-core-ktx-1.12.0-alpha01\res
+com.smartsense.measuredata.app-jetified-viewpager2-1.0.0-8 C:\Users\andre\.gradle\caches\transforms-3\6224ed64a28f8f6b096cce1f3585d3f3\transformed\jetified-viewpager2-1.0.0\res
+com.smartsense.measuredata.app-cardview-1.0.0-9 C:\Users\andre\.gradle\caches\transforms-3\6cbb0bc7bfbcbd3ce25b4d15c3ad96a9\transformed\cardview-1.0.0\res
+com.smartsense.measuredata.app-material-1.6.1-10 C:\Users\andre\.gradle\caches\transforms-3\7278aded880b452ae9839b4f73760d4a\transformed\material-1.6.1\res
+com.smartsense.measuredata.app-jetified-lifecycle-livedata-core-ktx-2.5.1-11 C:\Users\andre\.gradle\caches\transforms-3\7401a9df43c58a08440e597f921a1e61\transformed\jetified-lifecycle-livedata-core-ktx-2.5.1\res
+com.smartsense.measuredata.app-coordinatorlayout-1.1.0-12 C:\Users\andre\.gradle\caches\transforms-3\829f45a5c2c47d61a5041332421d75e9\transformed\coordinatorlayout-1.1.0\res
+com.smartsense.measuredata.app-jetified-hilt-work-1.0.0-13 C:\Users\andre\.gradle\caches\transforms-3\833a87de08f08bc388f03c06a01eac14\transformed\jetified-hilt-work-1.0.0\res
+com.smartsense.measuredata.app-jetified-fragment-ktx-1.5.3-14 C:\Users\andre\.gradle\caches\transforms-3\86a447ed6b7bb0f1bacb4f7f7c7dd2fb\transformed\jetified-fragment-ktx-1.5.3\res
+com.smartsense.measuredata.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-15 C:\Users\andre\.gradle\caches\transforms-3\96b4006bacad21806f2d02f3dd7cda0a\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.smartsense.measuredata.app-recyclerview-1.1.0-16 C:\Users\andre\.gradle\caches\transforms-3\9a5246ae887cf670441bce5f9e687567\transformed\recyclerview-1.1.0\res
+com.smartsense.measuredata.app-appcompat-1.2.0-17 C:\Users\andre\.gradle\caches\transforms-3\9bee799a7afbf945a87a06bf6276ef3c\transformed\appcompat-1.2.0\res
+com.smartsense.measuredata.app-transition-1.2.0-18 C:\Users\andre\.gradle\caches\transforms-3\ad3606280b1a4602d877822f35eaea21\transformed\transition-1.2.0\res
+com.smartsense.measuredata.app-lifecycle-runtime-2.5.1-19 C:\Users\andre\.gradle\caches\transforms-3\b31fd6c074f266ce819fc6299374c1d2\transformed\lifecycle-runtime-2.5.1\res
+com.smartsense.measuredata.app-jetified-savedstate-ktx-1.2.0-20 C:\Users\andre\.gradle\caches\transforms-3\b6122564cc182f64b43d0f8fb2177ccc\transformed\jetified-savedstate-ktx-1.2.0\res
+com.smartsense.measuredata.app-lifecycle-livedata-core-2.5.1-21 C:\Users\andre\.gradle\caches\transforms-3\c7b292971e899deae5b76099012f596e\transformed\lifecycle-livedata-core-2.5.1\res
+com.smartsense.measuredata.app-jetified-activity-1.5.1-22 C:\Users\andre\.gradle\caches\transforms-3\cbe5c3ef5e7506e9fe5dddc8c252e3c3\transformed\jetified-activity-1.5.1\res
+com.smartsense.measuredata.app-lifecycle-viewmodel-2.5.1-23 C:\Users\andre\.gradle\caches\transforms-3\d015ca4d61c55c6b302a3633498f6257\transformed\lifecycle-viewmodel-2.5.1\res
+com.smartsense.measuredata.app-jetified-lifecycle-runtime-ktx-2.5.1-24 C:\Users\andre\.gradle\caches\transforms-3\d1f1b089c17f71e61e42233e502965f6\transformed\jetified-lifecycle-runtime-ktx-2.5.1\res
+com.smartsense.measuredata.app-jetified-annotation-experimental-1.3.0-25 C:\Users\andre\.gradle\caches\transforms-3\d22a56196f611ee331742d2311250e1e\transformed\jetified-annotation-experimental-1.3.0\res
+com.smartsense.measuredata.app-core-1.12.0-alpha01-26 C:\Users\andre\.gradle\caches\transforms-3\dac665d8a10369b1c3b9ff335a1f241e\transformed\core-1.12.0-alpha01\res
+com.smartsense.measuredata.app-wear-1.2.0-27 C:\Users\andre\.gradle\caches\transforms-3\dcd31c5e760b938e7ea3bc56bea42b9c\transformed\wear-1.2.0\res
+com.smartsense.measuredata.app-constraintlayout-2.1.4-28 C:\Users\andre\.gradle\caches\transforms-3\edfa0caea8aea8a218787fa49c2b23ce\transformed\constraintlayout-2.1.4\res
+com.smartsense.measuredata.app-jetified-health-services-client-1.0.0-beta01-29 C:\Users\andre\.gradle\caches\transforms-3\f9e84029c116c9f45ba2fd3724533d79\transformed\jetified-health-services-client-1.0.0-beta01\res
+com.smartsense.measuredata.app-jetified-savedstate-1.2.0-30 C:\Users\andre\.gradle\caches\transforms-3\fadf009ad4a68dbbd4de10563d46ac68\transformed\jetified-savedstate-1.2.0\res
+com.smartsense.measuredata.app-pngs-31 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\generated\res\pngs\release
+com.smartsense.measuredata.app-resValues-32 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\generated\res\resValues\release
+com.smartsense.measuredata.app-rs-33 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\generated\res\rs\release
+com.smartsense.measuredata.app-mergeReleaseResources-34 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.smartsense.measuredata.app-mergeReleaseResources-35 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.smartsense.measuredata.app-merged_res-36 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\build\intermediates\merged_res\release
+com.smartsense.measuredata.app-main-37 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\main\res
+com.smartsense.measuredata.app-release-38 C:\Users\andre\OneDrive\Desktop\Smart Sense\RawExamples\MeasureData_raw\app\src\release\res

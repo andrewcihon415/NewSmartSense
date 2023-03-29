@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\andre\\.gradle\\daemon\\7.5\\com.smartsense.measuredata.app-mergeDebugResources-35:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\andre\\.gradle\\daemon\\7.5\\com.smartsense.measuredata.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.smartsense.measuredata.app-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "com.smartsense.measuredata.app-main-38:/layout/activity_main.xml"
+    }
+]
